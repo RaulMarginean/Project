@@ -13,11 +13,11 @@ public class ChildController {
    ChildRepository childRepository;
 
     @GetMapping
-    List<Child> getChild() {
+    public List<Child> getChild() {
         return childRepository.findAll();
     }
     @PostMapping
-    Child createChild(@RequestBody Child child) {
+    public Child createChild(@RequestBody Child child) {
         return childRepository.save(child);
     }
 }

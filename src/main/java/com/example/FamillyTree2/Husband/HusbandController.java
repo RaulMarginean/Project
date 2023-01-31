@@ -24,12 +24,12 @@ public class HusbandController {
     WifeRepository wifeRepository;
 
     @GetMapping
-    List<Husband> getHusband() {
+    public List<Husband> getHusband() {
         return husbandRepository.findAll();
     }
 
     @PostMapping
-    Husband createHusband(@RequestBody Husband husband) {
+    public Husband createHusband(@RequestBody Husband husband) {
         return husbandRepository.save(husband);
     }
 
@@ -45,7 +45,7 @@ public class HusbandController {
     }
 
     @PutMapping("/{husbandId}/wife/{wifeId}")
-    Husband assignWifeToHusband(
+    public Husband assignWifeToHusband(
             @PathVariable Long husbandId,
             @PathVariable Long wifeId
     ) {
